@@ -153,65 +153,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="post与get是区别的（本标准答案参考自w3schools）"><a href="#post与get是区别的（本标准答案参考自w3schools）" class="headerlink" title="post与get是区别的（本标准答案参考自w3schools）"></a>post与get是区别的（本标准答案参考自w3schools）</h3><blockquote>
-<ul>
-<li><p>GET在浏览器回退时是无害的，而POST会再次提交请求</p>
-</li>
-<li><p>GET产生的URL地址可以被Bookmark，而POST不可以。</p>
-</li>
-<li><p>GET请求会被浏览器主动cache，而POST不会，除非手动设置</p>
-</li>
-<li><p>GET请求只能进行url编码，而POST支持多种编码方式。</p>
-</li>
-<li><p>GET请求参数会被完整保留在浏览器历史记录里，而POST中的参数不会被保留。</p>
-</li>
-<li><p>GET请求在URL中传送的参数是有长度限制的，而POST没有。</p>
-</li>
-<li><p>对参数的数据类型，GET只接受ASCII字符，而POST没有限制</p>
-</li>
-<li><p>GET比POST更不安全，因为参数直接暴露在URL上，所以不能用来传递敏感信息。</p>
-</li>
-<li><p>GET参数通过URL传递，POST放在Request body中。</p>
-</li>
-</ul>
-</blockquote>
-<h3 id="post与get本质是没有区别的"><a href="#post与get本质是没有区别的" class="headerlink" title="post与get本质是没有区别的"></a>post与get本质是没有区别的</h3><blockquote>
-<ul>
-<li><p>post请求和get请求都是HTTP的请求方式，本质上来说并无区别，底层实现都是基于TCP/IP协议。</p>
-</li>
-<li><p>get和post能做的事情是一样一样的。你要给get加上request body，给post带上url参数，技术上是完全行的通的。如果get加上request body，再在request body中添加数据，不同的服务器，可能会有不同的处理，有些服务器会读取数据，有些服务器会直接忽略</p>
-</li>
-</ul>
-</blockquote>
-<p><strong>总结：</strong><br><strong><em>post与get最大的区别在于：post产生两个数据包，而get产生是一个数据包</em></strong><br/></p>
-<ul>
-<li>对于GET方式的请求：<ul>
-<li>浏览器请求tcp连接（第一次握手）</li>
-<li>服务器答应进行tcp连接（第二次握手）</li>
-<li>浏览器确认，并发送get请求头和数据（第三次握手，这个报文比较小，所以http会在此时进行第一次数据发送）</li>
-<li>服务器返回200 OK响应 </li>
-</ul>
-</li>
-<li>对于POST方式的请求：<ul>
-<li>浏览器请求tcp连接（第一次握手）</li>
-<li>服务器答应进行tcp连接（第二次握手）</li>
-<li>浏览器确认，并发送post请求头和数据（第三次握手，这个报文比较小，所以http会在此时进行第一次数据发送）</li>
-<li>服务器返回100 Continue响应 </li>
-<li>浏览器发送数据 </li>
-<li>服务器返回200 OK响应  </li>
-</ul>
-</li>
-<li>因为POST需要两步，时间上消耗的要多一点，看起来GET比POST更有效。因此Yahoo团队有推荐用GET替换POST来优化网站性能。但这是一个坑！跳入需谨慎。为什么？<ul>
-<li>GET与POST都有自己的语义，不能随便混用。</li>
-<li>据研究，在网络环境好的情况下，发一次包的时间和发两次包的时间差别基本可以无视。而在网络环境差的情况下，两次包的TCP在验证数据包完整性上，有非常大的优点。</li>
-<li>并不是所有浏览器都会在POST中发送两次包，Firefox就只发送一次。</li>
-</ul>
-</li>
-</ul>
-<h3 id="get请求传参长度的误区：我们常说的get请求参数的大小存在限制，而post请求的大小是无限制的"><a href="#get请求传参长度的误区：我们常说的get请求参数的大小存在限制，而post请求的大小是无限制的" class="headerlink" title="get请求传参长度的误区：我们常说的get请求参数的大小存在限制，而post请求的大小是无限制的"></a>get请求传参长度的误区：我们常说的get请求参数的大小存在限制，而post请求的大小是无限制的</h3><blockquote>
-<p>实际上HTTP协议从未规定GET/POST的请求长度限制是多少，对get请求参数的限制是来源于浏览器或者web服务器，不同的浏览器和web服务器限制了url的长度</p>
-</blockquote>
-
+        <p>个人整理GET与POST</p>
+        
+          <a class="article-more-a" href="/2020/05/19/post%E4%B8%8Eget/#more">more >></a>
+        
       
 
       
